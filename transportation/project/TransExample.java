@@ -31,29 +31,18 @@ public class TransExample {
 		showAllTransportation();
 		
 		//2. 상품구매시 id로 찾은 고객의 실제 지불금액과 보너스 포인트 출력
-		Transportation transportation = findTransportation("521");		
+		Transportation transportation = findTransportation("521");	
 		
-		
-		while (run) {
-			System.out.println("-----------------------------------------");
-			System.out.println("1.계좌생성 | 2.계좌목록");
-			System.out.println("-----------------------------------------");
-			System.out.println("선택>");
-			int selectNo = scanner.nextInt();
-
-			switch (selectNo) {
-			case 1:
-				//승객수 보여주기
-				passengerCountList();
-				break;
-			case 2:
-			
-				accountList();
-				break;
+		if(transportation == null) {
+			//회원을 찾지 못했을때
+			System.out.println("존재하지 않는 회원입니다.");
+		} else {
+			//회원을 찾았을때
+			showPriceBonus(transportation, 10000); //이율곡이 10000원을 주고 상품을 구매했을때
+		}
 		
 		
 	}
-	
 	public static void showAllTransportation() {
 		System.out.println("==========모든 대중교통 이용 정보 출력==========");
 		
