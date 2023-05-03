@@ -5,14 +5,18 @@ public class ShoppingBasket {
 	private String name; //이름
 	private int phone; //번호
 	private int balance; //잔고
+	private int plus; //구매가격 더하기
+	
 	
 	//생성자
-	public ShoppingBasket(String id, String name, int phone, int balance) {
+	public ShoppingBasket(String name, String id, int balance) {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.balance = balance;
 	}
+	
+	
 
 	//메소드
 	public String getId() {
