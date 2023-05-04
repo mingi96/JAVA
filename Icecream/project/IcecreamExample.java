@@ -1,19 +1,19 @@
 package Icecream.project;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
-import quiz.Account;
 
 public class IcecreamExample {
 
 	// 계좌객체를 저장할 수 있는 배열(디폴트 값: null)
-	private static Icecream[] accountArray = new Icecream[100];
+	private ArrayList<Icecream> IcecreamList = new ArrayList<>();
 	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		Icecream icecream1 = new Icecream("메로나", "빙그레", 1500);
 		Icecream icecream2 = new Icecream("죠스바", "롯데", 1000);
 		Icecream icecream3 = new Icecream("쌍쌍바", "해태", 700);
+		
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -25,7 +25,8 @@ public class IcecreamExample {
 			System.out.println("제품명: " + icecream1.name);
 			System.out.println("회사명: " + icecream1.companyName);
 			System.out.println("가격: " + icecream1.price);
-
+			price1();
+			
 		} else if (input == 2) {
 			System.out.println("제품명: " + icecream2.name);
 			System.out.println("회사명: " + icecream2.companyName);
@@ -36,37 +37,14 @@ public class IcecreamExample {
 			System.out.println("회사명: " + icecream3.companyName);
 			System.out.println("가격: " + icecream3.price);
 		}
-
-		boolean run = true;
-
-		while (run) {
-			System.out.println("-----------------------------------------");
-			System.out.println("1.계좌생성 | 2.계좌목록 | 3.종료");
-			System.out.println("-----------------------------------------");
-			System.out.println("선택>");
-			int selectNo = scanner.nextInt();
-
-			switch (selectNo) {
-			case 1:
-				// 구매
-				buy();
-				break;
-			case 2:
-				// 구매X
-				noBuy();
-				break;
-			case 3:
-				run = false;
-				break;
-			default:
-				System.out.println("1, 2 선택하세요.");
-				break;
-			}
-		}
+			
 	}
 	
-	private static void buy() {
-		
+
+	private static void price1() {
+		if(price > 1000) {
+			System.out.println("20% 할인입니다.");
+		}
 	};
 }
 
