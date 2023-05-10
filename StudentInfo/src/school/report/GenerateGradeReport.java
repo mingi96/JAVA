@@ -2,6 +2,7 @@ package school.report;
 
 import java.util.ArrayList;
 
+import StudentInfo.src.school.School;
 import grade.BasicEvaluation;
 import grade.GradeEvaluation;
 import grade.MajorEvaluation;

@@ -1,4 +1,4 @@
-package school;
+package StudentInfo.src.school;
 
 import java.util.ArrayList;
 
