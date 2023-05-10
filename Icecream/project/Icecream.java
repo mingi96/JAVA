@@ -1,5 +1,8 @@
 package Icecream.project;
 
+
+
+
 public class Icecream {
 	String name;
 	String companyName;

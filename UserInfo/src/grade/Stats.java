@@ -9,17 +9,17 @@ public class Stats implements StatsEvaluation {
 
 		// 공격력 등급 산출 구현
 		if (offensepoint >= 400000 && offensepoint <= 500000)
-			grade = "S";
+			grade = "고대";
 		else if (offensepoint >= 300000 && offensepoint <= 390000)
-			grade = "A";
+			grade = "유물";
 		else if (offensepoint >= 200000 && offensepoint <= 290000)
-			grade = "B";
+			grade = "전설";
 		else if (offensepoint >= 100000 && offensepoint <= 190000)
-			grade = "C";
+			grade = "영웅";
 		else if (offensepoint >= 10000 && offensepoint <= 90000)
-			grade = "D";
+			grade = "희귀";
 		else
-			grade = "F";
+			grade = "일반";
 
 		return grade;
 	}
