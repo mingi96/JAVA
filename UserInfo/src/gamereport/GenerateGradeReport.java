@@ -2,8 +2,11 @@ package gamereport;
 
 import java.util.ArrayList;
 
+import game.*;
+import grade.*;
+
 public class GenerateGradeReport {
-	Game game = Game.getInstance();
+	Game game = Game.getInstance(); // school 싱글톤 객체 생성
 
 	public static final String TITLE = "유저 랭킹 \t\t\n";
 	public static final String HEADER = "아이디 | 직업 | 무기정보 | 랭킹       \n";
@@ -38,11 +41,14 @@ public class GenerateGradeReport {
 	// 몸통을 만들어주는 메소드
 	public void makeBody(Weapon weapon) {
 		ArrayList<User> userList = weapon.getUserList();
+		ArrayList<User> weaponList = weapon.getUserList();
 
 		for (User user : userList) {
-			buffer.append(user.getUserID()); // 유저이름
+			buffer.append(user.getUserId()); // 유저이름
 			buffer.append(" | ");
-			buffer.append(user.getUserJob()); // 학번
+			buffer.append(user.getJob()); // 유저직업
+			buffer.append(" | ");
+			buffer.append(user.getOffensePowerList());
 //				buffer.append(" | ");
 //				buffer.append(user.getMajorSubject().getSubjectName()); // 학생 필수과목
 //				buffer.append(" | ");
@@ -52,10 +58,11 @@ public class GenerateGradeReport {
 			buffer.append("\n");
 			buffer.append(GenerateGradeReport.LINE);
 		}
+		
 	}
 
-	// 유저의 수강과목 점수와 학점을 얻는 메소드
-	public void getOffensePowerGrade(User user, int WeaponLevel) {
+	// 유저의 공격력과
+	public void getOffensePowerGrade(User user, int weaponLevel) {
 		// 유저가 보유한 무기의 공격력 리스트
 		ArrayList<OffensePower> OffensePowerList = user.getOffensePowerList();
 
@@ -70,20 +77,10 @@ public class GenerateGradeReport {
 
 		for (OffensePower offensePower : OffensePowerList) {
 			// 공격력에 해당하는 무기의 무기레벨를 얻어온다.
-			if (score.getWeapon().getWeaponLevel() == weaponLevel) {
+			if (offensePower.getWeapon().getWeaponLevel() == weaponLevel) {
 				String grade;
+				grade = statsEvaluation[0].getGrade(offensePower.getWeaponLevel());
 
-//					// ★이해
-//					// 필수과목일때 학점산출
-//					if (score.getSubject().getSubjectId() == majorId) {
-//						grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
-//					} else { // 일반과목일때 학점산출
-//						grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
-//					}
-
-				buffer.append(offensePower.getrankingPoint());
-				buffer.append(":");
-				buffer.append(grade);
 				buffer.append(" | ");
 			}
 		}

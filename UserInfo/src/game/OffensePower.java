@@ -1,23 +1,21 @@
 package game;
 
-import java.util.ArrayList;
-
 public class OffensePower {
-	private int userId; //아이디
-	private Weapon weapon; //무기
-	private int rankingPoint; //랭킹 점수
-	
-	public OffensePower(int userId, Weapon weapon, int rankingPoint) {
+	private String userId; // 아이디
+	private Weapon weapon; // 무기
+	private int weaponLevel; // 무기 레벨
+
+	public OffensePower(String userId, Weapon weapon, int weaponLevel) {
 		this.userId = userId;
 		this.weapon = weapon;
-		this.rankingPoint = rankingPoint;
+		this.weaponLevel = weaponLevel;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
@@ -29,15 +27,16 @@ public class OffensePower {
 		this.weapon = weapon;
 	}
 
-	public int getRankingPoint() {
-		return rankingPoint;
+	public int getWeaponLevel() {
+		return weaponLevel;
 	}
 
-	public void setRankingPoint(int rankingPoint) {
-		this.rankingPoint = rankingPoint;
+	public void setWeaponLevel(int weaponLevel) {
+		this.weaponLevel = weaponLevel;
 	}
 
 	
+
 	
-	
+
 }

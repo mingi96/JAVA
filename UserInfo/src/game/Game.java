@@ -30,12 +30,12 @@ public class Game {
 	}
 	
 	//무기 등록
-	public void addRanking(Weapon ranking) {
-		weaponList.add(ranking);
+	public void addWeapon(Weapon weapon) {
+		weaponList.add(weapon);
 	}
 	
 	//무기 리스트 출력
-	public ArrayList<Weapon> getRankingList() {
+	public ArrayList<Weapon> getWeaponList() {
 		return weaponList;
 	}
 }
